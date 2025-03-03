@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-
 export default function Home() {
   return (
     <section className="flex min-h-screen items-center justify-center py-32">
@@ -26,14 +25,14 @@ export default function Home() {
           <div className="flex flex-col overflow-clip rounded-xl border border-border md:col-span-2 md:grid md:grid-cols-2 md:gap-6 lg:gap-8">
             <div className="md:min-h-[24rem] lg:min-h-[28rem] xl:min-h-[32rem]">
               <img
-                src="https://shadcnblocks.com/images/block/placeholder-1.svg"
-                alt="Feature 1"
+               src="/img/mug_warmer.png"
+                alt="Mug Warmer"
                 className="aspect-[16/9] h-full w-full object-cover object-center"
               />
             </div>
             <div className="flex flex-col justify-center px-6 py-8 md:px-8 md:py-10 lg:px-10 lg:py-12">
               <h3 className="mb-3 text-lg font-semibold md:mb-4 md:text-2xl lg:mb-6">
-                Feature 1
+                Mug Warmer 
               </h3>
               <p className="text-muted-foreground lg:text-lg">
                 Nam vitae molestie arcu. Quisque eu libero orci. Aliquam
@@ -44,7 +43,7 @@ export default function Home() {
           <div className="flex flex-col-reverse overflow-clip rounded-xl border border-border md:col-span-2 md:grid md:grid-cols-2 md:gap-6 lg:gap-8">
             <div className="flex flex-col justify-center px-6 py-8 md:px-8 md:py-10 lg:px-10 lg:py-12">
               <h3 className="mb-3 text-lg font-semibold md:mb-4 md:text-2xl lg:mb-6">
-                Feature 2
+                Electric Juicer
               </h3>
               <p className="text-muted-foreground lg:text-lg">
                 Nam vitae molestie arcu. Quisque eu libero orci. Aliquam
@@ -53,8 +52,8 @@ export default function Home() {
             </div>
             <div className="md:min-h-[24rem] lg:min-h-[28rem] xl:min-h-[32rem]">
               <img
-                src="https://shadcnblocks.com/images/block/placeholder-2.svg"
-                alt="Feature 2"
+                src="/img/juicer.png"
+                alt="Juicer"
                 className="aspect-[16/9] h-full w-full object-cover object-center"
               />
             </div>
