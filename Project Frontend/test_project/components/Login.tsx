@@ -7,21 +7,22 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Eye, EyeOff} from "lucide-react";
-
-
+import { useRouter } from 'next/navigation'
 const Login: React.FC = () => {
     // Local state for form inputs
     const [email, SetEmail] = useState('')
     const [password, setPassword] = useState('')
     const [showPassword, setShowPassword] = useState(false)
-  
+    const router = useRouter()
     // Handle form submission
     const handleSubmit = (event: React.FormEvent) => {
       event.preventDefault();
       // Insert your login logic here (e.g., API call)
       console.log('Logging in with:', { email, password });
     };
-
+    const handleClick = () => {
+        router.push('/'); 
+      };
     return(
         <div className="min-h-screen bg-gradient-to-br from-primary-50 to-primary-100 flex items-center justify-centere p4">
             <motion.div
@@ -62,6 +63,9 @@ const Login: React.FC = () => {
 
                         <Button type="submit" className="w-full">
                             Sign in
+                        </Button>
+                        <Button onClick={handleClick} type="button" variant="outline" className="w-full bg-white text-black hover:bg-gray-100">
+                            Back
                         </Button>
                     </form>
 

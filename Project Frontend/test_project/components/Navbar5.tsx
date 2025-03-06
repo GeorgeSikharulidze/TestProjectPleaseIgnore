@@ -1,5 +1,5 @@
 "use client";
-
+import { useRouter } from 'next/navigation'
 import { MenuIcon } from "lucide-react";
 import {Codesandbox} from "lucide-react";
 import {
@@ -26,40 +26,26 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
+
+
+
 const Navbar5 = () => {
-  const features = [
+  const router = useRouter()
+  const products = [
     {
-      title: "Dashboard",
-      description: "Overview of your activity",
-      href: "#",
+      title: "Juicer",
+      description: "Mix Your Favourite Fruits",
+      href: "/product/1",
     },
     {
-      title: "Analytics",
-      description: "Track your performance",
-      href: "#",
-    },
-    {
-      title: "Settings",
-      description: "Configure your preferences",
-      href: "#",
-    },
-    {
-      title: "Integrations",
-      description: "Connect with other tools",
-      href: "#",
-    },
-    {
-      title: "Storage",
-      description: "Manage your files",
-      href: "#",
-    },
-    {
-      title: "Support",
-      description: "Get help when needed",
-      href: "#",
+      title: "Mug Warmer",
+      description: "Warm up Your Morning drink",
+      href: "/product/2",
     },
   ];
-
+  const handleClick = () => {
+    router.push('/login'); 
+  };
   return (
     <section className="py-4 flex items-center justify-center ">
       <div className="container">
@@ -71,19 +57,19 @@ const Navbar5 = () => {
           <NavigationMenu className="hidden lg:block">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Features</NavigationMenuTrigger>
+                <NavigationMenuTrigger>Products</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="grid w-[600px] grid-cols-2 p-3">
-                    {features.map((feature, index) => (
+                    {products.map((product, index) => (
                       <NavigationMenuLink
-                        href={feature.href}
+                        href={product.href}
                         key={index}
                         className="rounded-md p-3 transition-colors hover:bg-muted/70"
                       >
-                        <div key={feature.title}>
-                          <p className="mb-1 font-semibold">{feature.title}</p>
+                        <div key={product.title}>
+                          <p className="mb-1 font-semibold">{product.title}</p>
                           <p className="text-sm text-muted-foreground">
-                            {feature.description}
+                            {product.description}
                           </p>
                         </div>
                       </NavigationMenuLink>
@@ -93,23 +79,23 @@ const Navbar5 = () => {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink
-                  href="#"
+                  href="/"
                   className={navigationMenuTriggerStyle()}
                 >
-                  Products
+                  Home
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink
-                  href="#"
+                  href="/FAQ"
                   className={navigationMenuTriggerStyle()}
                 >
-                  Resources
+                  FAQ
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink
-                  href="#"
+                  href="/contact"
                   className={navigationMenuTriggerStyle()}
                 >
                   Contact
@@ -118,7 +104,7 @@ const Navbar5 = () => {
             </NavigationMenuList>
           </NavigationMenu>
           <div className="hidden items-center gap-4 lg:flex">
-            <Button variant="outline">Sign in</Button>
+            <Button variant="outline" onClick={handleClick}>Sign in</Button>
             <Button>Start for free</Button>
           </div>
           <Sheet>
@@ -146,22 +132,22 @@ const Navbar5 = () => {
                 <Accordion type="single" collapsible className="mb-2 mt-4">
                   <AccordionItem value="solutions" className="border-none">
                     <AccordionTrigger className="hover:no-underline">
-                      Features
+                      Products
                     </AccordionTrigger>
                     <AccordionContent>
                       <div className="grid md:grid-cols-2">
-                        {features.map((feature, index) => (
+                        {products.map((product, index) => (
                           <a
-                            href={feature.href}
+                            href={product.href}
                             key={index}
                             className="rounded-md p-3 transition-colors hover:bg-muted/70"
                           >
-                            <div key={feature.title}>
+                            <div key={product.title}>
                               <p className="mb-1 font-semibold">
-                                {feature.title}
+                                {product.title}
                               </p>
                               <p className="text-sm text-muted-foreground">
-                                {feature.description}
+                                {product.description}
                               </p>
                             </div>
                           </a>

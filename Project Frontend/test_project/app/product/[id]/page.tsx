@@ -5,7 +5,7 @@ interface Product {
   id: number;
   name: string;
   description: string;
-  image_id: string;
+  img_path: string;
 }
 
 interface PageProps {
@@ -16,7 +16,7 @@ export default async function Page({ params }: PageProps) {
   const { id } = params;
 
   try {
-    const res = await fetch(`http://localhost:8000/api/product/${id}`, {
+    const res = await fetch(`http://localhost:8000/products/product/${id}`, {
       cache: "no-store", // ensures fresh data on every request
     });
 
