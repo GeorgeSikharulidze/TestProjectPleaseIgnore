@@ -28,9 +28,10 @@ async def root():
     return {"message": "Welcome to the FastAPI backend!"}
 
 # Include routers
-from app.routers import api, products
+from app.routers import api, products, users
 # app.include_router(api.router, prefix="/api")
 app.include_router(products.router, prefix="/products")
+app.include_router(users.router)
 
 # Dependency (keep this if needed elsewhere, otherwise remove)
 def get_db():

@@ -10,7 +10,6 @@
 #     image_id: str
 
 #     model_config = ConfigDict(strict=True)
-
 # products = {
 #     1: {"id": 1, "name": "Test Item 1", "description": "123345", "image_id": "juicer"},
 #     2: {"id": 2, "name": "Test Item 2", "description": "678910", "image_id": "mug_warmer"},
