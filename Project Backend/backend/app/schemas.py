@@ -1,14 +1,22 @@
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel
 
-class UserCreate(BaseModel):
-    username: str
-    email: str
-    password: str
+class ProductBase(BaseModel):
+    name: str
+    description: str | None = None
+    price: float
+    img_path: str
 
-class UserResponse(BaseModel):
+class ProductCreate(ProductBase):
+    pass
+
+class ProductUpdate(BaseModel):
+    name: str | None = None
+    description: str | None = None
+    price: float | None = None
+    img_path: str | None = None
+
+class Product(ProductBase):
     id: int
-    username: str
-    email: str
 
-    # Updated configuration for Pydantic v2
-    model_config = ConfigDict(from_attributes=True)
+    class Config:
+        from_attributes = True

@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   backend:
     build: ./backend
@@ -12,6 +10,9 @@ services:
       - APP_PORT=8000
       - ALLOW_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
     volumes:
-      - ./backend:/app
+      - sqlite_data:/app/db # Persist SQLite database
     restart: unless-stopped
-    command: uvicorn --reload --host 0.0.0.0 --port 8000 app.main:app --reload-exclude 'venv/*'
+    command: uvicorn --reload --host 0.0.0.0 --port 8000 app.main:app
+
+volumes:
+  sqlite_data:
